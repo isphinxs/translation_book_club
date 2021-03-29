@@ -1,1 +1,12 @@
 <h1><%= @author.name %></h1>
+<h2>Books</h2>
+<% if @author.books.empty? %>
+    <p>No books by this author</p>
+<% else %>
+    <% @author.books.each do |book| %>
+        <p><%= link_to book.name, book_path(book.id) %></p>
+    <% end %>
+<% end %>
+
+<%= link_to "Edit", author_path(@author.id) %>
+<!-- delete button -->
