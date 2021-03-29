@@ -1,0 +1,4 @@
+<h1>Publishers</h1>
+<%= @publishers.each do |publisher| %>
+    <p><%= link_to publisher.name, publisher_path(publisher.id) %></p>
+<% end %>
