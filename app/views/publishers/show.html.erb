@@ -1,1 +1,11 @@
 <h1><%= @publisher.name %></h1>
+<% if @publisher.books.empty? %>
+    <p>This publisher has no books.</p>
+<% else %>
+    <% @publisher.books.each do |publisher| %>
+        <p><%= link_to publisher.name, publisher_path(publisher.id) %></p>
+    <% end %>
+<% end %>
+
+<%= link_to "Edit", edit_publisher_path(@publisher) %>
+<!-- delete button -->

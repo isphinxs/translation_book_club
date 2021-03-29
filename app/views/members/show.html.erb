@@ -1,5 +1,14 @@
 <h1><%= @member.name %></h1>
+<h2>Books</h2>
+<% if @member.books.empty? %>
+    <p>This member has no books.</p>
+<% else %>
+    <% @member.books.each do |book| %>
+        <%= link_to book.name, book_path(book.id) %>
+    <% end %>
+<% end %>
 
+<p><%= link_to "Edit", edit_member_path(@member) %></p>
 <!-- 
 <%= link_to "Delete", member_path(@member), method: :delete %>
 -->

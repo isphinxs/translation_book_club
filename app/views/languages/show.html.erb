@@ -1,1 +1,22 @@
 <h1><%= @language.name %></h1>
+<h2>Books</h2>
+<% if @language.books.empty? %>
+    <p>This language has no books.</p>
+<% else %>
+    <% @language.books.each do |book| %>
+        <%= link_to book.name, book_path(book.id) %>
+    <% end %>
+<% end %>
+
+<h2>Publishers</h2>
+<% if @language.publishers.empty? %>
+    <p>This language has no publishers.</p>
+<% else %>
+    <% @language.publishers.each do |publisher| %>
+        <%= link_to publisher.name, publisher_path(publisher.id) %>
+    <% end %>
+<% end %>
+
+<p><%= link_to "Edit", edit_language_path(@language.id) %></p>
+
+<!-- delete button>
