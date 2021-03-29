@@ -3,3 +3,5 @@
 <p>Language: <%= link_to @book.language.name, language_path(@book.language.id) %></p>
 <p>Publisher: <%= link_to @book.publisher.name, publisher_path(@book.publisher.id) %></p>
 <p>Introduced by member: <%= link_to @book.member.name, member_path(@book.member.id) %></p>
+
+<p><%= link_to "Edit", edit_book_path(@book) %></p>

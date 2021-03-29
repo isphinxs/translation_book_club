@@ -2,8 +2,8 @@
 <% if @publisher.books.empty? %>
     <p>This publisher has no books.</p>
 <% else %>
-    <% @publisher.books.each do |publisher| %>
-        <p><%= link_to publisher.name, publisher_path(publisher.id) %></p>
+    <% @publisher.books.each do |book| %>
+        <p><%= link_to book.name, book_path(book.id) %></p>
     <% end %>
 <% end %>
 
